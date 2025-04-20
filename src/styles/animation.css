@@ -1,0 +1,139 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* แอนิเมชันหายใจ (สำหรับสร้างความเคลื่อนไหวแบบนุ่มนวล) */
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* แอนิเมชันกระพริบ */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* แอนิเมชันกระเพื่อม (สำหรับไอคอนหรือป้ายส่วนลด) */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* แอนิเมชันเมื่อเพิ่มสินค้าลงตะกร้า */
+@keyframes addToCart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* แอนิเมชันสำหรับตัวโหลด */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* แอนิเมชันกระดอนขึ้นลง */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* แอนิเมชันเมื่อกดปุ่ม */
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* การใช้แอนิเมชันกับองค์ประกอบต่างๆ */
+
+/* แอนิเมชันหน้าเข้า */
+main {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* เอฟเฟกต์กดปุ่ม */
+.neumorph-btn:active,
+.neumorph-btn-primary:active,
+.neumorph-btn-secondary:active {
+  animation: press 0.3s ease;
+}
+
+/* เอฟเฟกต์เมื่อเพิ่มสินค้าลงตะกร้า */
+.neumorph-btn-add.added {
+  animation: addToCart 0.5s ease;
+}
+
+/* เอฟเฟกต์ป้ายส่วนลด */
+.discount-badge {
+  animation: blink 2s infinite;
+}
+
+/* เอฟเฟกต์ไอคอนโปรโมชั่น */
+.promo-icon {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+/* ตัวโหลด */
+.neumorph-loader {
+  animation: spin 1s linear infinite;
+}
+
+/* สำหรับลูกค้าที่ชอบการเคลื่อนไหวน้อย */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

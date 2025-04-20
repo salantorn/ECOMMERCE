@@ -1,0 +1,717 @@
+/* ============= สไตล์พื้นฐานแบบนิวมอร์ฟิค ============= */
+:root {
+  /* สีหลัก */
+  --nm-bg-color: #f0f2f5;
+  --nm-card-color: #e8ecf2;
+  --nm-text-color: #2c3e50;
+  --nm-text-muted: #718093;
+  --nm-accent-color: #4a69bd;
+  --nm-accent-light: #6a89cc;
+  --nm-accent-dark: #3a5499;
+  --nm-success-color: #27ae60;
+  --nm-danger-color: #e74c3c;
+  --nm-warning-color: #f39c12;
+  --nm-info-color: #3498db;
+  
+  /* เงาและส่วนที่ยื่นออกมา */
+  --nm-shadow-small: 2px 2px 5px rgba(174, 174, 192, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.9);
+  --nm-shadow: 5px 5px 10px rgba(174, 174, 192, 0.4), -5px -5px 10px rgba(255, 255, 255, 0.9);
+  --nm-shadow-large: 10px 10px 20px rgba(174, 174, 192, 0.4), -10px -10px 20px rgba(255, 255, 255, 0.9);
+  
+  /* เงาแบบยุบเข้าไป */
+  --nm-inner-shadow: inset 2px 2px 5px rgba(174, 174, 192, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+  
+  /* ขอบและมุม */
+  --nm-border-radius: 12px;
+  --nm-border-radius-small: 8px;
+  --nm-border-radius-large: 16px;
+  
+  /* ระยะเวลาในการเปลี่ยนแปลง */
+  --nm-transition-speed: 0.3s;
+}
+
+/* สไตล์พื้นฐานของเว็บไซต์ */
+body {
+  font-family: 'Prompt', 'Poppins', sans-serif;
+  background-color: var(--nm-bg-color);
+  color: var(--nm-text-color);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.text-accent {
+  color: var(--nm-accent-color);
+}
+
+.bg-accent {
+  background-color: var(--nm-accent-color);
+  color: white;
+}
+
+/* คอนเทนเนอร์หลัก */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* ============= คอมโพเนนต์พื้นฐาน ============= */
+
+/* การ์ด */
+.neumorph-card {
+  background-color: var(--nm-card-color);
+  border-radius: var(--nm-border-radius);
+  box-shadow: var(--nm-shadow);
+  overflow: hidden;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-card:hover {
+  box-shadow: var(--nm-shadow-large);
+  transform: translateY(-2px);
+}
+
+/* พื้นผิวแบบกดลงไป */
+.neumorph-inner {
+  background-color: var(--nm-card-color);
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-inner-shadow);
+  overflow: hidden;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+/* ปุ่มทั่วไป */
+.neumorph-btn {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  padding: 8px 16px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn:hover {
+  box-shadow: var(--nm-shadow);
+  color: var(--nm-accent-color);
+}
+
+.neumorph-btn:active {
+  box-shadow: var(--nm-inner-shadow);
+  transform: translateY(1px);
+}
+
+/* ปุ่มหลัก */
+.neumorph-btn-primary {
+  background-color: var(--nm-accent-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+  padding: 8px 16px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn-primary:hover {
+  background-color: var(--nm-accent-light);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.neumorph-btn-primary:active {
+  background-color: var(--nm-accent-dark);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  transform: translateY(1px);
+}
+
+/* ปุ่มแบบไม่มีพื้นหลัง */
+.neumorph-btn-text {
+  background: none;
+  border: none;
+  color: var(--nm-text-color);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 6px 12px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn-text:hover {
+  color: var(--nm-accent-color);
+  transform: translateY(-1px);
+}
+
+/* ปุ่มรอง */
+.neumorph-btn-secondary {
+  background-color: var(--nm-card-color);
+  border: 1px solid var(--nm-accent-color);
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-accent-color);
+  cursor: pointer;
+  font-weight: 500;
+  outline: none;
+  padding: 8px 16px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn-secondary:hover {
+  box-shadow: var(--nm-shadow);
+  background-color: rgba(74, 105, 189, 0.1);
+  transform: translateY(-1px);
+}
+
+.neumorph-btn-secondary:active {
+  box-shadow: var(--nm-inner-shadow);
+  transform: translateY(1px);
+}
+
+/* ปุ่มเพิ่มสินค้า */
+.neumorph-btn-add {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: all var(--nm-transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neumorph-btn-add:hover {
+  color: var(--nm-accent-color);
+}
+
+.neumorph-btn-add:active, .neumorph-btn-add.added {
+  box-shadow: var(--nm-inner-shadow);
+}
+
+.neumorph-btn-add.added::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--nm-accent-color);
+  opacity: 0.1;
+  animation: pulse 1s ease;
+}
+
+/* ปุ่มเล็ก */
+.neumorph-btn-sm {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn-sm:hover {
+  box-shadow: var(--nm-shadow);
+  color: var(--nm-accent-color);
+}
+
+/* ปุ่มอันตราย */
+.neumorph-btn-danger-sm {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-danger-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-btn-danger-sm:hover {
+  box-shadow: var(--nm-shadow);
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* ช่องกรอกข้อมูล */
+.neumorph-input {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-inner-shadow);
+  color: var(--nm-text-color);
+  outline: none;
+  padding: 10px 15px;
+  transition: all var(--nm-transition-speed) ease;
+  width: 100%;
+}
+
+.neumorph-input:focus {
+  box-shadow: var(--nm-inner-shadow), 0 0 0 3px rgba(74, 105, 189, 0.2);
+}
+
+.neumorph-input-group {
+  position: relative;
+}
+
+.neumorph-input-group .input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--nm-text-muted);
+}
+
+.neumorph-input-group .neumorph-input {
+  padding-left: 40px;
+}
+
+/* เพิลล์ (ชิปแท็ก) */
+.neumorph-pill {
+  background-color: var(--nm-card-color);
+  border: none;
+  border-radius: 50px;
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  padding: 6px 16px;
+  transition: all var(--nm-transition-speed) ease;
+  white-space: nowrap;
+}
+
+.neumorph-pill:hover {
+  box-shadow: var(--nm-shadow);
+  color: var(--nm-accent-color);
+}
+
+.neumorph-pill.active {
+  background-color: var(--nm-accent-color);
+  color: white;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* แท็บ */
+.neumorph-tabs {
+  background-color: var(--nm-card-color);
+  border: none;
+  display: flex;
+  overflow-x: auto;
+  padding: 5px;
+}
+
+.neumorph-tabs .nav-link {
+  background: none;
+  border: none;
+  border-radius: var(--nm-border-radius-small);
+  color: var(--nm-text-color);
+  margin: 0 5px;
+  padding: 10px 15px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-tabs .nav-link:hover {
+  color: var(--nm-accent-color);
+}
+
+.neumorph-tabs .nav-link.active {
+  background-color: var(--nm-card-color);
+  box-shadow: var(--nm-inner-shadow);
+  color: var(--nm-accent-color);
+  font-weight: 600;
+}
+
+/* ตัวเลือกวิธีการชำระเงิน */
+.neumorph-radio-card {
+  position: relative;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-radio-label {
+  background-color: var(--nm-card-color);
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  cursor: pointer;
+  display: block;
+  font-weight: 500;
+  padding: 15px;
+  transition: all var(--nm-transition-speed) ease;
+  width: 100%;
+}
+
+.neumorph-radio-label:hover {
+  box-shadow: var(--nm-shadow);
+}
+
+.btn-check:checked + .neumorph-radio-label {
+  box-shadow: var(--nm-inner-shadow);
+  color: var(--nm-accent-color);
+  font-weight: 600;
+}
+
+/* โปรเกรสบาร์ */
+.neumorph-progress {
+  background-color: var(--nm-card-color);
+  border-radius: 50px;
+  box-shadow: var(--nm-inner-shadow);
+  height: 8px;
+  overflow: hidden;
+}
+
+/* ตัวโหลด */
+.neumorph-loader {
+  border: 4px solid var(--nm-card-color);
+  border-radius: 50%;
+  border-top: 4px solid var(--nm-accent-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ข้อความผิดพลาด */
+.neumorph-error {
+  background-color: var(--nm-card-color);
+  border-radius: var(--nm-border-radius);
+  box-shadow: var(--nm-shadow);
+  color: var(--nm-danger-color);
+}
+
+/* ============= คอมโพเนนต์เจาะจง ============= */
+
+/* ส่วนหัว */
+.neumorph-header {
+  background-color: var(--nm-bg-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.neumorph-header .logo {
+  color: var(--nm-text-color);
+  font-weight: 700;
+}
+
+.neumorph-header .hamburger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.neumorph-header .hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--nm-text-color);
+  border-radius: 3px;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-header .hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.neumorph-header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.neumorph-header .hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.neumorph-nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--nm-transition-speed) ease;
+}
+
+.neumorph-nav.show {
+  max-height: 300px;
+}
+
+.neumorph-nav .neumorph-link {
+  color: var(--nm-text-color);
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: var(--nm-border-radius-small);
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-nav .neumorph-link:hover {
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-accent-color);
+  transform: translateX(5px);
+}
+
+.cart-badge {
+  font-size: 0.6rem;
+  transform: translate(-50%, -50%) !important;
+}
+
+/* ส่วนท้าย */
+.neumorph-footer {
+  background-color: var(--nm-card-color);
+  padding-top: 2rem;
+  margin-top: auto;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.neumorph-footer .footer-link {
+  color: var(--nm-text-color);
+  text-decoration: none;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-footer .footer-link:hover {
+  color: var(--nm-accent-color);
+  transform: translateX(3px);
+  display: inline-block;
+}
+
+.neumorph-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--nm-card-color);
+  box-shadow: var(--nm-shadow-small);
+  color: var(--nm-text-color);
+  transition: all var(--nm-transition-speed) ease;
+  text-decoration: none;
+}
+
+.neumorph-social-icon:hover {
+  box-shadow: var(--nm-shadow);
+  color: var(--nm-accent-color);
+  transform: translateY(-2px);
+}
+
+/* สินค้า */
+.product-card {
+  transition: all var(--nm-transition-speed) ease;
+  height: 100%;
+}
+
+.product-image-container {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--nm-card-color);
+  border-radius: var(--nm-border-radius-small);
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.product-image {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  transition: transform var(--nm-transition-speed) ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--nm-accent-color);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--nm-text-color);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-price {
+  font-weight: 600;
+  color: var(--nm-accent-color);
+}
+
+.product-description {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* รายละเอียดสินค้า */
+.main-product-image {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  transition: transform var(--nm-transition-speed) ease;
+}
+
+.product-thumbnails {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.neumorph-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--nm-border-radius-small);
+  box-shadow: var(--nm-shadow-small);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--nm-transition-speed) ease;
+}
+
+.neumorph-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.neumorph-thumbnail.active {
+  box-shadow: 0 0 0 2px var(--nm-accent-color), var(--nm-shadow-small);
+}
+
+.product-detail-price .original-price {
+  font-size: 0.9rem;
+}
+
+.product-detail-price .current-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--nm-accent-color);
+}
+
+.discount-badge {
+  background-color: var(--nm-success-color);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.quantity-selector {
+  user-select: none;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.quantity-display {
+  font-weight: 600;
+}
+
+/* โปรไฟล์ผู้ใช้ */
+.profile-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--nm-shadow);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--nm-card-color);
+  color: var(--nm-text-muted);
+  font-size: 3rem;
+}
+
+.neumorph-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--nm-card-color);
+  box-shadow: var(--nm-shadow-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nm-text-muted);
+}
+
+/* ============= แอนิเมชัน ============= */
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+/* ============= การปรับแต่งตามอุปกรณ์ ============= */
+@media (min-width: 768px) {
+  .neumorph-header .hamburger {
+    display: none;
+  }
+  
+  .neumorph-nav {
+    max-height: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .neumorph-nav ul {
+    display: flex;
+  }
+  
+  .neumorph-nav .neumorph-link {
+    padding: 8px 16px;
+  }
+  
+  .neumorph-nav .neumorph-link:hover {
+    transform: translateY(-2px);
+  }
+}
