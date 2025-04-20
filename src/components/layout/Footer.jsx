@@ -17,10 +17,10 @@ const Footer = () => {
               มอบประสบการณ์การช้อปปิ้งที่เรียบง่ายและสะดวกสบาย
             </p>
             <div className="social-icons d-flex mt-3">
-              <a href="#" className="neumorph-social-icon me-2" aria-label="เฟซบุ๊ก">
+              <a href="https://www.facebook.com/salantron.ketpru.3?locale=th_TH" className="neumorph-social-icon me-2" aria-label="เฟซบุ๊ก">
                 <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" className="neumorph-social-icon me-2" aria-label="อินสตาแกรม">
+              <a href="#" className="neumorph-social-icon me-2" aria-label="เบอร์โทรศัพท์">
                 <i className="bi bi-instagram"></i>
               </a>
               <a href="#" className="neumorph-social-icon me-2" aria-label="ทวิตเตอร์">
