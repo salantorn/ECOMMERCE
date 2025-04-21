@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ProductCard from './ProductCard';
 import { ProductContext } from '../../context/ProductContext';
+import "../../../public/product.json"
 
 const ProductList = () => {
   const { products, loading, error } = useContext(ProductContext);
